@@ -2,7 +2,7 @@ version: '3.9'
 services:
   palworld-dedicated-server:
     container_name: palworld-dedicated-server
-    image: jammsen/palworld-dedicated-server:v0.34
+    image: jammsen/palworld-dedicated-server:latest
     restart: unless-stopped
     ports:
       - target: 8211
@@ -14,6 +14,6 @@ services:
         protocol: tcp
         mode: host
     env_file:
-      - ./default.env
+      - ./.env.local
     volumes:
       - ./game:/palworld
